@@ -27,7 +27,7 @@ defmodule Text do
   end
 
   def print_even do
-    for x <- 1..10, is_even(x), do: rem(x,3)
+    for x <- 1..10, is_even(x), do: x
   end
 
   def lists do
@@ -48,21 +48,25 @@ defmodule Text do
     IO.puts("list2 : #{list2}")
     list1--list2
 
-   # addition
-   IO.puts("list1 : #{list1}")
-   IO.puts("list2 : #{list2}")
-   list1++list2
+    # addition
+    IO.puts("list1 : #{list1}")
+    IO.puts("list2 : #{list2}")
+    list1++list2
   end
 
   def maps do
     university="University Name"
-    m=%{"name" => "Muhammad Naeem", "city" => "Lahore", university => "UET Lahore", "name" => "Naeem"}
+    m=%{"name" => "Muhammad Naeem", "city" => "Lahore", :university => "UET Lahore", "name" => "Naeem"}
 
     # access particular property of map
     IO.puts("#{m["name"]} belongs to #{m["city"]}")
 
     # updating map
     m=%{m | "name" => "Updated Map"}
+    %{"name" => username, :university => uni_name} = m  # pattern matching on map
+    IO.puts("Username #{username}")
+    IO.puts("University #{uni_name}")
+
   end
 
   def pipe do
