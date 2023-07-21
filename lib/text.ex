@@ -1,6 +1,10 @@
 import Integer
 defmodule Text do
 
+  @moduledoc """
+  Provides different functions to practice
+  """
+
   def hello_world(count \\ 0) do  # Define a recursive function
     IO.puts("Hello World")
     if count < 10 do
